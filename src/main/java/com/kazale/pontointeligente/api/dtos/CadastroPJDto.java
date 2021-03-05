@@ -16,8 +16,21 @@ public class CadastroPJDto {
 	private String razaoSocial;
 	private String cnpj;
 
-	public CadastroPJDto() {
+	
+
+	public CadastroPJDto(Long id, String nome, String email, String senha, String cpf, String razaoSocial,
+			String cnpj) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.cpf = cpf;
+		this.razaoSocial = razaoSocial;
+		this.cnpj = cnpj;
 	}
+	
+	public CadastroPJDto() {}
 
 	public Long getId() {
 		return id;

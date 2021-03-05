@@ -50,7 +50,7 @@ public class CadastroPJController {
 	 * @throws NoSuchAlgorithmException
 	 */
 	@PostMapping
-	public ResponseEntity<Response<CadastroPJDto>> cadastrar(@Valid @RequestBody CadastroPJDto cadastroPJDto,
+	public ResponseEntity<Response<CadastroPJDto>> cadastrar(@RequestBody CadastroPJDto cadastroPJDto,
 			BindingResult result) throws NoSuchAlgorithmException {
 		log.info("Cadastrando PJ: {}", cadastroPJDto.toString());
 		Response<CadastroPJDto> response = new Response<CadastroPJDto>();
