@@ -1,8 +1,8 @@
 package com.kazale.pontointeligente.api.dtos;
 
 import javax.validation.constraints.Email;
-import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -16,21 +16,8 @@ public class CadastroPJDto {
 	private String razaoSocial;
 	private String cnpj;
 
-	
-
-	public CadastroPJDto(Long id, String nome, String email, String senha, String cpf, String razaoSocial,
-			String cnpj) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.email = email;
-		this.senha = senha;
-		this.cpf = cpf;
-		this.razaoSocial = razaoSocial;
-		this.cnpj = cnpj;
+	public CadastroPJDto() {
 	}
-	
-	public CadastroPJDto() {}
 
 	public Long getId() {
 		return id;

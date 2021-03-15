@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,7 +51,7 @@ public class CadastroPJController {
 	 * @throws NoSuchAlgorithmException
 	 */
 	@PostMapping
-	public ResponseEntity<Response<CadastroPJDto>> cadastrar(@RequestBody CadastroPJDto cadastroPJDto,
+	public ResponseEntity<Response<CadastroPJDto>> cadastrar(@Valid @RequestBody CadastroPJDto cadastroPJDto,
 			BindingResult result) throws NoSuchAlgorithmException {
 		log.info("Cadastrando PJ: {}", cadastroPJDto.toString());
 		Response<CadastroPJDto> response = new Response<CadastroPJDto>();
@@ -140,6 +141,11 @@ public class CadastroPJController {
 		cadastroPJDto.setCnpj(funcionario.getEmpresa().getCnpj());
 
 		return cadastroPJDto;
+	}
+	
+	@GetMapping
+	public String GetCadastroPJ() {
+		return "test";
 	}
 
 }
